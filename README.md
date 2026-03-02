@@ -1,25 +1,21 @@
-Perfect. This is no longer a small canvas demo — this is a structured React + TypeScript game with physics, state management, UI layers, and audio synthesis.
-
-Since you want it **technical and professional**, and it’s a **learning project**, I’ll write a README that reflects:
-
-* Architecture awareness
-* Intentional system design
-* Physics logic
-* State handling
-* UI separation
-* Incremental development
-
-You can copy-paste this directly into `README.md`.
-
----
-
 # Quantum Gravity Arena
 
 Quantum Gravity Arena is a physics-driven browser game built with **React, TypeScript, and HTML5 Canvas**.
 
-The player controls a gravitational core that attracts surrounding particles while managing energy stability. As difficulty scales, hostile entities, black holes, and dynamic physics systems increase system instability.
+The player controls a gravitational core that attracts surrounding particles while managing energy stability. As difficulty scales, hostile entities, black holes, and dynamic physics systems increase instability.
 
 This project was developed as a structured learning exercise focused on real-time simulation, game loop architecture, state management, and feature-driven iteration.
+
+---
+
+## 🌍 Deployment
+
+Quantum Gravity Arena is available online:
+
+* 🔗 **Live Demo (Netlify):** 
+* 💻 **Source Code (GitHub):**  https://iqra-mahfooz.github.io/quantum-gravity-arena/
+
+The game runs entirely in the browser and requires no backend services.
 
 ---
 
@@ -29,56 +25,59 @@ The application is structured as a single-page React app with canvas-based rende
 
 ### Core Systems
 
-* **Canvas Rendering Engine**
+#### Canvas Rendering Engine
 
-  * `requestAnimationFrame` game loop
-  * Delta-time based updates
-  * Real-time object simulation
-  * Screen shake transform effects
+* `requestAnimationFrame` game loop
+* Delta-time based updates
+* Real-time object simulation
+* Screen shake transform effects
 
-* **Physics Simulation**
+#### Physics Simulation
 
-  * Inverse-square gravity model
+* Inverse-square gravity model
 
-    ```
-    F = (G * m) / r²
-    ```
-  * Mouse-controlled gravitational attractor
-  * Black hole gravity fields
-  * Velocity damping for stability
-  * Particle merging via radius-based collision resolution
+  ```
+  F = (G * m) / r²
+  ```
 
-* **Entity System**
+* Mouse-controlled gravitational attractor
 
-  * Base `GameObject` class
-  * `Particle` subclasses (normal, enemy, powerup)
-  * `BlackHole` entity with independent motion logic
+* Black hole gravity fields
 
-* **Gameplay Mechanics**
+* Velocity damping for stability
 
-  * Energy overload system
-  * Shield with cooldown timing
-  * Level progression via score thresholds
-  * Power-up effects (slow, double score, invincibility)
-  * Enemy chase behavior
-  * High score persistence via `localStorage`
+* Particle merging via radius-based collision resolution
 
-* **Audio Engine**
+#### Entity System
 
-  * Web Audio API oscillator synthesis
-  * Procedural tone generation
-  * Event-driven sound feedback
+* Base `GameObject` class
+* `Particle` subclasses (normal, enemy, powerup)
+* `BlackHole` entity with independent motion logic
 
-* **State Management**
+#### Gameplay Mechanics
 
-  * React state for UI
-  * `useRef` for mutable simulation state
-  * Controlled game state enum (START / PLAYING / GAMEOVER)
+* Energy overload system
+* Shield with cooldown timing
+* Level progression via score thresholds
+* Power-up effects (slow, double score, invincibility)
+* Enemy chase behavior
+* High score persistence via `localStorage`
+
+#### Audio Engine
+
+* Web Audio API oscillator synthesis
+* Procedural tone generation
+* Event-driven sound feedback
+
+#### State Management
+
+* React state for UI
+* `useRef` for mutable simulation state
+* Controlled game state enum (START / PLAYING / GAMEOVER)
 
 ---
 
-
-### Design Separation
+## Design Separation
 
 * Rendering and simulation logic handled inside the animation loop
 * UI elements (HUD, menus, overlays) handled declaratively via React
